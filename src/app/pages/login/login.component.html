@@ -1,0 +1,40 @@
+<div class="root">
+  <div class="title">Log in</div>
+
+  <div>
+    <app-common-input
+      [value]="userName"
+      placeholder="Username"
+      (valueChange)="userName = $event"
+      icon="../../../assets/icons/user.svg"
+    ></app-common-input>
+    <div *ngIf="userNameError">
+      <span style="color: red;">{{ userNameError }}</span>
+    </div>
+  </div>
+
+  <div>
+    <app-password-input
+      [value]="password"
+      placeholder="Password"
+      (valueChange)="password = $event"
+      icon="../../../assets/icons/lock.svg"
+    ></app-password-input>
+    <div *ngIf="passwordError">
+      <span style="color: red;">{{ passwordError }}</span>
+    </div>
+    <div>
+      <button type="button" class="forgotBtn">Forgot my password</button>
+    </div>
+  </div>
+
+  <div style="text-align: center;">
+    <button (click)="handleSubmit()" class="registerBtn">Log in</button>
+    <span>
+      New to Your Game?
+      <button (click)="router.navigate(['/webservice/register'])" class="forgotBtn">
+        Sign up
+      </button>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,88 @@
+<div class="root">
+  <div class="leftDiv">
+    <div class="title">Profile</div>
+
+    <div>
+      <div class="desc">Full Name</div>
+      <app-common-input
+        [value]="profileForm.controls['fullName'].value"
+        placeholder="Full Name"
+        icon="../../assets/icons/profile.svg"
+        (valueChange)="profileForm.controls['fullName'].setValue($event)"
+      ></app-common-input>
+    </div>
+
+    <div>
+      <div class="desc">Username</div>
+      <app-common-input
+        [value]="profileForm.controls['userName'].value"
+        placeholder="Username"
+        icon="../../assets/icons/user.svg"
+        (valueChange)="profileForm.controls['userName'].setValue($event)"
+      ></app-common-input>
+    </div>
+
+    <div>
+      <div class="desc">Email</div>
+      <app-common-input
+        [value]="profileForm.controls['email'].value"
+        placeholder="Email"
+        icon="../../assets/icons/mail.svg"
+        (valueChange)="profileForm.controls['email'].setValue($event)"
+      ></app-common-input>
+    </div>
+
+    <div>
+      <div class="desc">Password</div>
+      <app-password-input
+        [value]="profileForm.controls['password'].value"
+        placeholder="Password"
+        icon="../../assets/icons/lock.svg"
+        (valueChange)="profileForm.controls['password'].setValue($event)"
+      />
+      <div class="delete">Delete account</div>
+    </div>
+
+    <div class="creditDiv">
+      <div class="title">Credit card details</div>
+      <div *ngIf="isExistedCredit">
+        <div class="creditSubDiv">
+          <input
+            [value]="profileForm.controls['cardNum'].value"
+            placeholder="Card number"
+            class="input"
+            (input)="profileForm.controls['cardNum'].setValue(getValue($event))"
+          />
+          <div class="cvcDiv">
+            <input
+              [value]="profileForm.controls['expDate'].value"
+              placeholder="Exp Date"
+              class="input"
+              (input)="profileForm.controls['expDate'].setValue(getValue($event))"
+            />
+            <input
+              [value]="profileForm.controls['cvc'].value"
+              placeholder="CVC"
+              class="input"
+              (input)="profileForm.controls['cvc'].setValue(getValue($event))"
+            />
+          </div>
+        </div>
+      </div>
+      <div *ngIf="isExistedCredit" class="delete" (click)="toggleCreditCard()">Delete credit card</div>
+      <div *ngIf="!isExistedCredit" class="addCredit" (click)="toggleCreditCard()">Add new credit card</div>
+    </div>
+
+    <button class="registerBtn" (click)="handleSubmit()">Update</button>
+  </div>
+
+  <div class="rightDiv">
+    <div class="title">Purchase History</div>
+    <div *ngFor="let item of bidHistory">
+      <img [src]="item.image" alt="brand" width="68" height="68" />
+      <div>{{ item.brandName }}</div>
+      <div>{{ item.date | date }}</div>
+      <div>{{ item.price | currency }}</div>
+    </div>
+  </div>
+</div>

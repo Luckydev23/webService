@@ -1,0 +1,48 @@
+.root {
+  gap: 25px;
+  grid-template-columns: repeat(1, 1fr);
+  max-width: 350px;
+  width: 100%;
+  margin: auto;
+  display: grid;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+  color: #253262;
+  margin-top: 80px;
+  margin-bottom: 3px;
+  text-align: center;
+}
+
+.registerBtn {
+  border: none;
+  background: #277dff;
+  border-radius: 12px;
+  align-items: center;
+  padding: 16px 82px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 3px;
+  margin-bottom: 10px;
+}
+
+.forgotBtn {
+  font-size: 16px;
+  line-height: 140%;
+  color: #277dff;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  margin-top: 4px;
+}
+
+.input-error {
+  border: 1px solid red;
+}

@@ -1,0 +1,78 @@
+<div class="root">
+  <div
+    id="mySidenav"
+    [style.width]="sidenavWidth"
+    class="sidenav"
+    [ngStyle]="{ transition: 'width 0.3s' }"
+  >
+    <a href="javascript:void(0)" class="closebtn" (click)="toggleSidebar(false)">
+      &times;
+    </a>
+
+    <div *ngIf="isLogin" class="navSubDiv">
+      <span
+        class="menuItem"
+        (click)="toggleSidebar(false); router.navigate(['/webservice/profile'])"
+        >Profile</span
+      >
+      <span class="menuItem" (click)="logout(); toggleSidebar(false)"
+        >Logout</span
+      >
+    </div>
+
+    <div *ngIf="!isLogin" class="navSubDiv">
+      <span
+        class="menuItem"
+        (click)="toggleSidebar(false); router.navigate(['/webservice/login'])"
+        >Login</span
+      >
+      <span
+        class="menuItem"
+        (click)="toggleSidebar(false); router.navigate(['/webservice/register'])"
+        >Register</span
+      >
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="flex">
+      <span class="logo" (click)="router.navigate(['/webservice'])">YourGame</span>
+      <span class="title">Marketplace</span>
+    </div>
+
+    <div class="searchDiv">
+      <app-common-input
+        [(value)]="search"
+        [placeholder]="'Search'"
+        [icon]="'assets/icons/search.svg'"
+        (valueChange)="onSearchChange($event)"
+      ></app-common-input>
+    </div>
+
+    <div class="userDiv">
+      <span *ngIf="!isLogin" class="loginTxt" (click)="router.navigate(['/webservice/login'])">
+        Login
+      </span>
+      <span *ngIf="isLogin" class="loginTxt" (click)="logout()">
+        Logout
+      </span>
+
+      <img
+        *ngIf="isLogin"
+        class="avatar"
+        src="assets/avatar/user.png"
+        alt="User Avatar"
+        (click)="router.navigate(['/webservice/profile'])"
+      />
+    </div>
+
+    <img
+      class="menuIcon"
+      width="28px"
+      height="16px"
+      src="assets/icons/menu.svg"
+      alt="Menu Icon"
+      (click)="toggleSidebar(true)"
+    />
+  </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="root">
+  <h2 class="title">Sign Up</h2>
+
+    <div>
+      <app-common-input
+        [value]="fullName"
+        placeholder="Full Name"
+        icon="../../assets/icons/profile.svg"
+        (valueChange)="fullName = $event"
+      ></app-common-input>
+      <span style="color: red;" *ngIf="fullNameError">{{ fullNameError }}</span>
+    </div>
+
+    <div>
+      <app-common-input
+        [value]="userName"
+        placeholder="Username"
+        icon="../../assets/icons/user.svg"
+        (valueChange)="userName=$event"
+      ></app-common-input>
+      <span *ngIf="userNameError" style="color: red;">{{ userNameError }}</span>
+    </div>
+
+    <div>
+      <app-common-input
+        [value]="email"
+        name="email"
+        placeholder="Email"
+        icon="../../assets/icons/mail.svg"
+        (valueChange)="email=$event"
+      ></app-common-input>
+      <span *ngIf="emailError" style="color: red;">{{ emailError }}</span>
+    </div>
+
+    <div>
+      <app-password-input
+        [value]="password"
+        placeholder="Password"
+        icon="../../assets/icons/lock.svg"
+        (valueChange)="password=$event"
+      ></app-password-input>
+      <span *ngIf="passwordError" style="color: red;">{{ passwordError }}</span>
+    </div>
+
+    <div>
+      <app-password-input
+        [value]="confirmPassword"
+        placeholder="Repeat password"
+        icon="../../assets/icons/lock.svg"
+        (valueChange)="confirmPassword=$event"
+      ></app-password-input>
+      <span *ngIf="confirmPasswordError" style="color: red;">
+        {{ confirmPasswordError }}
+      </span>
+    </div>
+
+    <div class="creditDiv">
+      <div class="creditTitle">Credit card</div>
+
+      <div class="creditSubDiv">
+        <input [value]="cardNum" placeholder="Card number" class="input" (input)="cardNum=getValue($event)" />
+
+        <div class="cvcDiv">
+          <input [value]="expDate" placeholder="Exp Date" class="input" (input)="expDate=getValue($event)" />
+          <input [value]="cvc" placeholder="CVC" class="input" (input)="cvc=getValue($event)" />
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span>Already have an account?</span>
+      <button (click)="router.navigate(['/webservice/login'])" class="forgotBtn">
+        Log in
+      </button>
+    </div>
+
+    <button (click)="handleSubmit()" class="registerBtn">Sign Up</button>
+</div>

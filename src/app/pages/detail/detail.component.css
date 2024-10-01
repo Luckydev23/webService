@@ -1,0 +1,207 @@
+.root {
+  max-width: 1140px;
+  width: 100%;
+  padding: 12px;
+  margin: auto;
+}
+
+.backText {
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(37, 50, 98, 0.5);
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.brand {
+  font-size: 20px;
+  line-height: 140%;
+  color: #253262;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  display: grid;
+  justify-content: space-between;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+  color: #253262;
+  margin-bottom: 8px;
+}
+
+.tagText {
+  color: #253262;
+  font-size: 16px;
+  line-height: 140%;
+  padding: 4px 12px;
+  border: 1px solid #253262;
+  border-radius: 24px;
+  margin-right: 4px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 140%;
+  color: #253262;
+  margin-top: 24px;
+  padding: 8px;
+}
+
+.text {
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(37, 50, 98, 0.5);
+  display: block;
+}
+
+.valueText {
+  font-size: 28px;
+  line-height: 140%;
+  color: #253262;
+}
+
+.bidDiv {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  margin-top: 28px;
+}
+
+.bidInputDiv {
+  background: rgba(37, 50, 98, 0.1);
+  border-radius: 12px;
+  padding: 4px 4px 4px 16px;
+  align-items: center;
+  width: fit-content;
+  margin-top: 28px;
+  display: flex;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: #253262;
+  font-size: 28px;
+  max-width: 160px;
+  margin-top: 6px;
+}
+
+.input:focus-visible {
+  outline: none;
+}
+
+.bidBtn {
+  background: #277dff;
+  border-radius: 8px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #ffffff;
+}
+
+.bidHistoryContainer {
+  margin-top: 80px;
+}
+
+.bidTitle {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 140%;
+  color: #253262;
+  margin-bottom: 28px;
+}
+
+.backDiv {
+  display: flex;
+  align-items: center;
+  margin-top: 80px;
+  margin-bottom: 32px;
+}
+
+.nameText {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #253262;
+  display: block;
+}
+
+.bidTime {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(37, 50, 98, 0.5);
+}
+
+.itemDiv {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+  gap: 20px;
+  max-width: 60%;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 20px;
+  line-height: 140%;
+  color: #253262;
+}
+
+.decimal {
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(37, 50, 98, 0.7);
+}
+
+.curBidDecimal {
+  font-size: 24px;
+  line-height: 140%;
+  color: rgba(37, 50, 98, 0.7);
+}
+
+@media screen and (max-width: 850px) {
+  .backDiv {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .root {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .backDiv {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .itemDiv {
+    max-width: 100%;
+  }
+
+  .bidDiv {
+    width: 100%;
+  }
+}

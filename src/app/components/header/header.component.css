@@ -1,0 +1,154 @@
+.root {
+  background: #fff;
+  position: sticky;
+  top: 0px;
+  z-index: 100;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  max-width: 1140px;
+  margin: auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 140%;
+  color: #253262;
+  cursor: pointer;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.title {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #253262;
+  margin-left: 52px;
+}
+
+.userDiv {
+  display: flex;
+  align-items: center;
+}
+
+.loginTxt {
+  font-size: 16px;
+  line-height: 140%;
+  color: #253262;
+  margin-right: 32px;
+  cursor: pointer;
+}
+
+.searchDiv {
+  display: flex;
+  max-width: 353px;
+  width: 100%;
+}
+
+.menuIcon {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .title {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .logo {
+    font-size: 20px;
+  }
+
+  .title {
+    display: none;
+  }
+
+  .searchDiv {
+    display: none;
+  }
+
+  .userDiv {
+    display: none;
+  }
+
+  .loginTxt {
+    display: none;
+  }
+
+  .container {
+    padding: 12px 20px;
+  }
+
+  .menuIcon {
+    display: flex;
+  }
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.navSubDiv {
+  width: 100%;
+  text-align: center;
+}
+
+.menuItem {
+  color: #111;
+  cursor: pointer;
+  font-size: 24px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}

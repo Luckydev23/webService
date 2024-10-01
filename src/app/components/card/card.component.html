@@ -1,0 +1,20 @@
+<div class="container">
+  <img [src]="data.image" alt="brand" width="100%" />
+  <span class="nameText">{{ data.name }}</span>
+
+  <div class="flex">
+    <div>
+      <span class="text">Current Bid</span>
+      <span class="valueText">
+        ${{ data.price.split('.')[0] }}.
+        <span class="decimalText">{{ data.price.split('.')[1] }}</span>
+      </span>
+    </div>
+    <div>
+      <span class="text">End Time</span>
+      <span class="valueText">{{ calculateTime(remainingTime) }}</span>
+    </div>
+  </div>
+
+  <button class="bidBtn" (click)="handleBidClick()">Place a Bid</button>
+</div>

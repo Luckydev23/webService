@@ -1,0 +1,64 @@
+<div class="root">
+  <div class="backDiv">
+    <span (click)="handleBackClick()" class="backText">Featured Items</span>
+    <span (click)="handleBackClick()" class="backText">></span>
+    <span class="brand">{{ data.name }}</span>
+  </div>
+
+  <div class="container">
+    <img [src]="data.image" alt="brand" width="100%" />
+    <div>
+      <div class="title">{{ data.name }}</div>
+      <div>
+        <span *ngFor="let tag of data?.tags" class="tagText">{{ tag }}</span>
+      </div>
+      <div class="description">{{ data.description }}</div>
+
+      <div class="bidDiv">
+        <div>
+          <span class="text">Current Bid</span>
+          <span class="valueText">
+            ${{ data.price?.split('.')[0] }}.
+            <span class="curBidDecimal">{{ data.price?.split('.')[1] }}</span>
+          </span>
+        </div>
+
+        <div>
+          <span class="text">End Time</span>
+          <span class="valueText">{{ calculateTimeLeft() }}</span>
+        </div>
+      </div>
+
+      <div class="bidInputDiv">
+        <span class="valueText">$</span>
+        <input
+          class="input"
+          type="number"
+          placeholder="50.00"
+          [value]="bidPrice"
+          (input)="bidPrice=getValue($event)"
+        />
+        <button class="bidBtn" (click)="handleBid()">Place a Bid</button>
+      </div>
+
+      <div class="bidHistoryContainer">
+        <div class="bidTitle">Bidding history</div>
+        <div *ngFor="let item of biddingHistory">
+          <div class="itemDiv">
+            <div class="flex">
+              <img [src]="item.avatar" alt="avatar" />
+              <div style="margin-left: 38px">
+                <span class="nameText">{{ item.name }}</span>
+                <span class="bidTime">{{ item.bidTime }}</span>
+              </div>
+            </div>
+            <div class="price">
+              {{ item.price.split('.')[0] }}.
+              <span class="decimal">{{ item.price.split('.')[1] }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

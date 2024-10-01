@@ -1,0 +1,9 @@
+<div class="container">
+  <img *ngIf="icon" [src]="icon" alt="icon" />
+  <input
+    class="input"
+    [value]="value"
+    [placeholder]="placeholder"
+    (input)="onInputChange($event)"
+  />
+</div>
